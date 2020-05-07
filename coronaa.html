@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Corona</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div id="menu-1">
+    <h1>Covid-19 Self Detector</h1>
+    <p>If you want to detect, whether you were infected by covid-19 or not, you are at the right place.</p >
+    <p>NOTE: This is not a real test, It's only my code.Please, Don't take it serious. <b>#STAY HOME & #STAY SAFE 😊</b></p>
+    <input type="button" name="" value="Click here to start" id="start" class="button" align="center" onclick="one()">
+</div>
+<div id="menu-2">
+    <form name="quiz">
+    <div class="question">
+        <p>1. Do you have headache?</p >
+    <input type="radio" name="question1" value="Yes" class="button">Yes
+    <input type="radio" name="question1" value="No" class="button">No
+    </div>
+
+    <div class="question">
+    <p>2. Do you have fever which is higher than 37.5 degree?</p >
+    <input type="radio" name="question2" value="Yes" class="button">Yes
+    <input type="radio" name="question2" value="No" class="button">No
+    </div>
+
+    <div class="question">
+    <p>3. Is it hard for you to breath?</p >
+    <input type="radio" name="question3" value="Yes" class="button">Yes
+    <input type="radio" name="question3" value="No" class="button">No
+    </div>
+
+    <div class="question">
+    <p>4. Are you often feeling tired even if you do nothing?</p >
+    <input type="radio" name="question4" value="Yes" class="button">Yes
+    <input type="radio" name="question4" value="No" class="button">No
+    </div>
+
+    <div class="question">
+    <p>5. Are you feeling some muscle pains?</p >
+    <input type="radio" name="question5" value="Yes" class="button">Yes
+    <input type="radio" name="question5" value="No" class="button">No
+    </div>
+
+    <div class="question">
+    <p>6. Do you cough?</p >
+    <input type="radio" name="question6" value="Yes" class="button">Yes
+    <input type="radio" name="question6" value="No" class="button">No
+    </div>
+  <div class="question">
+    <p>7. Do you have sore throat?</p >
+    <input type="radio" name="question7" value="Yes" class="button">Yes
+    <input type="radio" name="question7" value="No" class="button">No
+    </div>
+    <input type="button" name="" value="Submit the answers" onclick="check()" class="button">
+    </form>
+    <hr>
+
+</div>
+
+
+
+<div id="menu-3">
+<p id="text">
+</p >
+</div>
+<script type="text/javascript">
+    function one() {
+    var menu1=document.getElementById('menu-1');
+    var menu2=document.getElementById("menu-2");
+    menu1.style.display="none";
+    menu2.style.display="block"
+};
+function check() {
+    var c=0;
+        var question1=document.quiz.question1.value;
+        var question2=document.quiz.question2.value;
+        var question3=document.quiz.question3.value;
+        var question4=document.quiz.question4.value;
+        var question5=document.quiz.question5.value;
+        var question6=document.quiz.question6.value;
+                var question7=document.quiz.question7.value;
+        var text=document.getElementById('text');
+        var menu2=document.getElementById('menu-2');
+        var menu3=document.getElementById('menu-3');
+
+
+
+        if (question1=="Yes") {
+            c++;
+        };
+        if (question2=="Yes") {
+            c++;
+        };
+        if (question3=="Yes") {
+            c++;
+        };
+        if (question4=="Yes") {
+            c++;
+        };
+        if (question5=="Yes") {
+            c++;
+        };
+        if (question6=="Yes") {
+            c++;
+        };
+        if (question7=="Yes") {
+            c++; 
+        };
+
+        menu2.style.display="none";
+        menu3.style.display="block";
+        text.innerHTML='Hello my friend! <hr> You are experiencing '+ c+ "  of Coronavirus symptoms. <hr> PLease pay more attention to your and your family members' health. Call the doctor if you need any help. <hr> By Rupam Mankar";
+}
+</script>
+<style type="text/css">
+    body {
+    background-color: pink;
+    font-family: cursive;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+.button {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 5px 5px 8px red;
+    margin-right: 15px;
+}
+
+#start {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 5px 5px 8px red;
+}
+
+#menu-2 {
+    display: none;
+}
+
+.question {
+    background-color: rgba(100,255,100,1);
+    box-shadow: 10px 10px 15px black;
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+#menu-3 {
+    display: none;
+}  
+</style>
+</body>
+</html>
